@@ -1,5 +1,9 @@
+import { unwrapResult } from '@reduxjs/toolkit';
+import { FiLogIn } from 'react-icons/fi';
+import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
+import { LoginFormStyled, LoginBtn, LoginInput } from './LofinForm.styled';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -11,20 +15,23 @@ export const LoginForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
-    form.reset();
+    )
+      .then(unwrapResult)
+      .catch(() =>
+        toast.error(
+          `Ups! Something wrong... Please, check your email or password and try again.`
+        )
+      );
   };
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <LoginFormStyled onSubmit={handleSubmit} autoComplete="off">
+      <LoginInput type="email" name="email" placeholder="email" />
+
+      <LoginInput type="password" name="password" placeholder="password" />
+
+      <LoginBtn type="submit">
+        <FiLogIn size="24" />
+      </LoginBtn>
+    </LoginFormStyled>
   );
 };

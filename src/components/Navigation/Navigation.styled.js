@@ -6,9 +6,15 @@ export const NavigationLink = styled(NavLink)`
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: gray;
+  transition: color 0.3s ease;
+
+  :hover,
+  :focus {
+    color: rgb(0, 126, 165);
+  }
 
   &.active {
-    color: #e84a5f;
+    color: rgb(0, 126, 165);
   }
 `;

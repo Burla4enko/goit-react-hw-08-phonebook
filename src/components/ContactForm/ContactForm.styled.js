@@ -6,11 +6,17 @@ export const ContactFormStyled = styled(Form)`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 8px;
-  margin: 10px;
-  width: 400px;
+  padding: 18px;
+  margin: 10px auto;
+  max-width: 320px;
 
-  border: 1px solid black;
+  position: relative;
+  z-index: 2;
+
+  background-color: gray;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px 3px gray;
 `;
 
 export const Label = styled.label`
