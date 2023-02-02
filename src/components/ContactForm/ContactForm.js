@@ -1,7 +1,11 @@
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts-and-filtering/operations';
+import {
+  selectContacts,
+  selectIsLoading,
+} from 'redux/contacts-and-filtering/selectors';
 import {
   ContactFormStyled,
   Input,
@@ -9,7 +13,6 @@ import {
   Button,
   Label,
 } from './ContactForm.styled';
-import { selectContacts, selectIsLoading } from 'redux/selectors';
 import { validationScheme } from 'utils/validationSchema';
 import { isInContact } from 'utils/isInContact';
 
@@ -20,17 +23,17 @@ export const ContactForm = () => {
 
   const initialValues = { name: '', number: '' };
 
-  const onSubmit = ({ name, number: phone }, { resetForm }) => {
+  const onSubmit = ({ name, number }, { resetForm }) => {
     if (isInContact(contacts, name).length > 0) {
       return toast.error(`${name} is already in the contact list`);
     }
     try {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
       toast.success(`New contact ${name} successfully added`);
+      resetForm();
     } catch (e) {
       return e.message;
     }
-    resetForm();
   };
 
   return (

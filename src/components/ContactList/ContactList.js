@@ -1,9 +1,16 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'components/ContactForm/ContactForm.styled';
 import { ContactListLi, ContactListUl } from './ContactList.styled';
-import { selectContacts, selectFilter, selectIsLoading } from 'redux/selectors';
-import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/operations';
+import {
+  selectContacts,
+  selectFilter,
+  selectIsLoading,
+} from 'redux/contacts-and-filtering/selectors';
+import {
+  deleteContact,
+  fetchContacts,
+} from 'redux/contacts-and-filtering/operations';
 // import { toast } from 'react-hot-toast';
 
 export const ContactList = () => {
@@ -22,11 +29,11 @@ export const ContactList = () => {
 
   return (
     <ContactListUl>
-      {visibleContacts.map(({ id, name, phone }) => {
+      {visibleContacts.map(({ id, name, number }) => {
         return (
           <ContactListLi key={id}>
             <span>{name}:</span>
-            <span>{phone}</span>
+            <span>{number}</span>
             <Button
               type="button"
               onClick={() => dispatch(deleteContact(id))}
