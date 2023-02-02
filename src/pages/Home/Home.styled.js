@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SectionWrapper = styled.section`
+export const HomeSectionWrapper = styled.section`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;

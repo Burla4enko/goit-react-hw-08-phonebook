@@ -1,4 +1,4 @@
-import { HomeParagraph, SectionWrapper } from './Home.styled';
+import { HomeParagraph, HomeSectionWrapper } from './Home.styled';
 import { SlNotebook } from 'react-icons/sl';
 import { FaUserPlus, FaUserEdit, FaUserMinus } from 'react-icons/fa';
 import { BiSearchAlt } from 'react-icons/bi';
@@ -6,7 +6,7 @@ import { BiSearchAlt } from 'react-icons/bi';
 
 export default function Home() {
   return (
-    <SectionWrapper>
+    <HomeSectionWrapper>
       <h1>Welcome to Phonebook!</h1>
 
       <HomeParagraph>
@@ -20,6 +20,6 @@ export default function Home() {
         Contact management: creation <FaUserPlus size="32" />, modification{' '}
         <FaUserEdit size="32" />, deletion <FaUserMinus size="32" />
       </HomeParagraph>
-    </SectionWrapper>
+    </HomeSectionWrapper>
   );
 }

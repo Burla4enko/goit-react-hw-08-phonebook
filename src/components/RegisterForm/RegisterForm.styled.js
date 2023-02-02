@@ -38,7 +38,7 @@ export const RegistrationBtn = styled.button`
   position: absolute;
   width: 52px;
   height: 52px;
-  color: rgb(52, 56, 61);
+  color: gray;
   border-radius: 50px;
   outline: 0;
   z-index: 2;
@@ -46,10 +46,9 @@ export const RegistrationBtn = styled.button`
   right: -24px;
   border: 6px solid rgb(52, 56, 61);
   background-color: rgb(28, 30, 33);
-  font-size: 25px;
-  text-indent: 0px;
+
   cursor: pointer;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
   :hover {
     color: rgb(0, 126, 165);
@@ -58,12 +57,7 @@ export const RegistrationBtn = styled.button`
   }
 
   svg {
-    color: gray;
-    transition: color 0.3s ease;
-
-    :hover {
-      color: rgb(0, 126, 165);
-    }
+    color: currentColor;
   }
 `;
 
