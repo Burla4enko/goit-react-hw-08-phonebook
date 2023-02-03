@@ -50,7 +50,8 @@ export const RegistrationBtn = styled.button`
   cursor: pointer;
   transition: box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
-  :hover {
+  :hover,
+  :focus {
     color: rgb(0, 126, 165);
     box-shadow: 0 0 10px rgb(0, 126, 165);
     border-color: rgb(0, 126, 165);
@@ -69,7 +70,7 @@ export const RegistrationInput = styled.input`
   border: 0;
   outline: 0;
   top: -2px;
-  padding: 0 0 0 20px;
+  padding: 0 30px 0 20px;
   font-weight: 700;
   background-color: rgb(28, 30, 33);
   box-shadow: inset -100px -100px 0 rgb(28, 30, 33);

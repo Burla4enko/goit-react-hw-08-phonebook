@@ -4,13 +4,12 @@ export const ContactSectionWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
 `;
 
-export const AddContactWrapper = styled.div`
-  max-width: 30%;
-`;
-
-export const ContactsListWrapper = styled.div`
-  margin-left: 40px;
+export const ContactsTitle = styled.h2`
+  font-size: 32px;
+  margin-bottom: 10px;
 `;

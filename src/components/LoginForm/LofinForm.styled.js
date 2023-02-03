@@ -41,7 +41,8 @@ export const LoginBtn = styled.button`
   cursor: pointer;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 
-  :hover {
+  :hover,
+  :focus {
     color: rgb(0, 126, 165);
     box-shadow: 0 0 10px rgb(0, 126, 165);
     border-color: rgb(0, 126, 165);
@@ -61,7 +62,7 @@ export const LoginInput = styled.input`
   border: 0;
   outline: 0;
   top: -2px;
-  padding: 0 0 0 20px;
+  padding: 0 30px 0 20px;
   font-weight: 700;
   background-color: rgb(28, 30, 33);
   box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
@@ -72,16 +73,3 @@ export const LoginInput = styled.input`
     color: rgb(0, 126, 165);
   }
 `;
-
-// export const LoginLabel = styled.label`
-//   display: block;
-//   padding: 3px 5px;
-//   position: absolute;
-//   top: -10px;
-//   right: 20px;
-//   text-transform: uppercase;
-//   color: gray;
-//   z-index: 3;
-//   background-color: rgb(28, 30, 33);
-//   border-radius: 4px;
-// `;

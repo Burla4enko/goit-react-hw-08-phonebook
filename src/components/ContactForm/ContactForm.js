@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
+import { FaUserPlus } from 'react-icons/fa';
 import { addContact } from 'redux/contacts-and-filtering/operations';
 import {
   selectContacts,
@@ -10,8 +11,8 @@ import {
   ContactFormStyled,
   Input,
   MessageSpan,
-  Button,
   Label,
+  ContactFormButton,
 } from './ContactForm.styled';
 import { validationScheme } from 'utils/validationSchema';
 import { isInContact } from 'utils/isInContact';
@@ -43,21 +44,19 @@ export const ContactForm = () => {
       validationSchema={validationScheme}
     >
       <ContactFormStyled autoComplete="off">
+        <Input type="text" name="name" placeholder="name" />
         <Label htmlFor="name">
-          Name
-          <Input type="text" name="name" />
           <MessageSpan name="name" component={'span'} />
         </Label>
 
+        <Input type="tel" name="number" placeholder="number" />
         <Label htmlFor="number">
-          Number
-          <Input type="tel" name="number" />
           <MessageSpan name="number" component={'span'} />
         </Label>
 
-        <Button type="submit" disabled={isLoading}>
-          Add contact
-        </Button>
+        <ContactFormButton type="submit" disabled={isLoading}>
+          <FaUserPlus size="24" />
+        </ContactFormButton>
       </ContactFormStyled>
     </Formik>
   );

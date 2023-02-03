@@ -4,60 +4,93 @@ import { Form, Field, ErrorMessage } from 'formik';
 export const ContactFormStyled = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 18px;
-  margin: 10px auto;
-  max-width: 320px;
-
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto;
   position: relative;
-  z-index: 2;
-
-  background-color: gray;
-  border: 1px solid lightgray;
+  background-color: rgb(28, 30, 33);
   border-radius: 8px;
-  box-shadow: 3px 3px 10px 3px gray;
+
+  :before {
+    display: block;
+    margin-left: 20px;
+    position: relative;
+    top: 40px;
+    height: 2px;
+    background-color: rgb(52, 56, 61);
+    content: '';
+
+    z-index: 1;
+  }
 `;
 
 export const Label = styled.label`
-  font-weight: 500;
-  position: relative;
-  margin: 10px 0;
+  position: absolute;
+  font-size: 0;
 `;
 
 export const Input = styled(Field)`
+  position: relative;
   display: block;
-  margin-top: 5px;
-  padding: 4px;
-  border-radius: 4px;
-  border: 1px solid gray;
+  width: 280px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  top: -2px;
+  padding: 0 30px 0 20px;
+  font-weight: 700;
+  background-color: rgb(28, 30, 33);
+  box-shadow: inset -100px -100px 0 rgb(28, 30, 33);
+  color: gray;
+  transition: color 0.3s ease;
+
+  :focus {
+    color: rgb(0, 126, 165);
+  }
 `;
 
 export const MessageSpan = styled(ErrorMessage)`
   position: absolute;
-  top: 0;
-  left: 400px;
-  width: 400px;
+  top: 100px;
+  left: -10px;
+  width: 300px;
   padding: 8px;
 
-  background-color: lightgray;
+  background-color: rgb(28, 30, 33);
+  color: #ff3038;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
 `;
 
-export const Button = styled.button`
-  display: inline-block;
-  min-width: 100px;
-  padding: 8px 16px;
-
-  border-radius: 5px;
-  border: none;
+export const ContactFormButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  color: gray;
+  border-radius: 50px;
+  outline: 0;
+  z-index: 2;
+  top: 24px;
+  right: -24px;
+  border: 6px solid rgb(52, 56, 61);
+  background-color: rgb(28, 30, 33);
   cursor: pointer;
-  transition: color 0.2s ease, background-color 0.2s ease;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 
   :hover,
   :focus {
-    background-color: darkgray;
-    color: white;
+    color: rgb(0, 126, 165);
+    box-shadow: 0 0 10px rgb(0, 126, 165);
+    border-color: rgb(0, 126, 165);
+  }
+
+  svg {
+    color: currentColor;
+    transition: color 0.3s ease;
   }
 `;

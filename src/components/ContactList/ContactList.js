@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'components/ContactForm/ContactForm.styled';
-import { ContactListLi, ContactListUl } from './ContactList.styled';
+import { FaUserMinus } from 'react-icons/fa';
+import {
+  ContactListButton,
+  ContactListLi,
+  ContactListUl,
+} from './ContactList.styled';
 import {
   selectContacts,
   selectFilter,
@@ -11,7 +15,6 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts-and-filtering/operations';
-// import { toast } from 'react-hot-toast';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -32,15 +35,17 @@ export const ContactList = () => {
       {visibleContacts.map(({ id, name, number }) => {
         return (
           <ContactListLi key={id}>
-            <span>{name}:</span>
-            <span>{number}</span>
-            <Button
+            <div>
+              <span>{name}:</span>
+              <span>{number}</span>
+            </div>
+            <ContactListButton
               type="button"
               onClick={() => dispatch(deleteContact(id))}
               disabled={isLoading}
             >
-              Delete
-            </Button>
+              <FaUserMinus size="32" />
+            </ContactListButton>
           </ContactListLi>
         );
       })}

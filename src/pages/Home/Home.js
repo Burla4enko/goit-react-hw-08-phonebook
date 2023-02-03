@@ -2,7 +2,6 @@ import { HomeParagraph, HomeSectionWrapper } from './Home.styled';
 import { SlNotebook } from 'react-icons/sl';
 import { FaUserPlus, FaUserEdit, FaUserMinus } from 'react-icons/fa';
 import { BiSearchAlt } from 'react-icons/bi';
-// BiSearchAlt
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { BiSearchAlt } from 'react-icons/bi';
 import { changeFilter } from 'redux/contacts-and-filtering/filterSlice';
 import {
   selectContacts,
@@ -15,7 +16,7 @@ export const Filter = () => {
     <>
       {contacts.length > 0 && (
         <FilterLabel>
-          Find contacts by name
+          <BiSearchAlt size="32" />
           <FilterInput
             type="text"
             name="filter"

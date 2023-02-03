@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
